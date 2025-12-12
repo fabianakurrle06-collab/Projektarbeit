@@ -1,4 +1,4 @@
 package Projektarbeit;
 
-public class Main {
+public class CoffeShop {
 }
