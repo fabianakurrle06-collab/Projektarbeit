@@ -2,7 +2,6 @@ package Projektarbeit;
 
 import javax.swing.*;
 
-
 public class CoffeShop {
     private JPanel CoffePanel;
     private JLabel titleLabel;
@@ -20,4 +19,3 @@ public class CoffeShop {
     private JButton createButton;
     private JTextArea ausgabeTextArea;
 }
-
