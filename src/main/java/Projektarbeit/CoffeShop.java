@@ -1,8 +1,10 @@
 package Projektarbeit;
 
 import javax.swing.*;
+import java.awt.*;
 
-public class CoffeShop {
+public class CoffeShop extends JFrame {
+
     private JPanel CoffePanel;
     private JLabel titleLabel;
     private JLabel createDrinkLabel;
@@ -18,4 +20,16 @@ public class CoffeShop {
     private JComboBox comboBox1;
     private JButton createButton;
     private JTextArea ausgabeTextArea;
+
+    public CoffeShop() throws HeadlessException {
+        setTitle("Eingabe für die Bestellung im Coffe Shop");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(600, 500);
+        setContentPane(CoffePanel);
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new CoffeShop();
+    }
 }
