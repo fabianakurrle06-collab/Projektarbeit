@@ -8,13 +8,13 @@ public class CoffeShop {
     private JLabel createDrinkLabel;
     private JLabel drinkLabel;
     private JComboBox drinkcomboBox;
-    private JLabel groeßeLabel;
+    private JLabel sizeLabel;
     private JComboBox groeßecomboBox;
     private JLabel flavourLabel;
     private JRadioButton vanilleRadioButton;
     private JRadioButton caramellRadioButton;
     private JRadioButton pistazieRadioButton;
-    private JLabel milchLabel;
+    private JLabel milkLabel;
     private JComboBox comboBox1;
     private JButton createButton;
     private JTextArea ausgabeTextArea;

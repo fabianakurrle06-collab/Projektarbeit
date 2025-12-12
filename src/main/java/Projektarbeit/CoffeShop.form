@@ -51,12 +51,12 @@
           </model>
         </properties>
       </component>
-      <component id="adf1b" class="javax.swing.JLabel" binding="groeßeLabel">
+      <component id="adf1b" class="javax.swing.JLabel" binding="sizeLabel">
         <constraints>
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Größe"/>
+          <text value="Size"/>
         </properties>
       </component>
       <component id="73df6" class="javax.swing.JComboBox" binding="groeßecomboBox">
@@ -103,12 +103,12 @@
           <text value="Pistazie"/>
         </properties>
       </component>
-      <component id="23811" class="javax.swing.JLabel" binding="milchLabel">
+      <component id="23811" class="javax.swing.JLabel" binding="milkLabel">
         <constraints>
           <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Milch"/>
+          <text value="Milk"/>
         </properties>
       </component>
       <component id="8c75e" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
