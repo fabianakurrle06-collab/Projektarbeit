@@ -22,9 +22,6 @@ public class CoffeeShop extends JFrame {
     private JComboBox cbxMilch;
     private JButton btnCreateButton;
     private JTextArea taAusgabe;
-    private JTextField a050TextField;
-    private JTextField a100TextField;
-    private JTextField a150TextField;
     private JTextField textField1;
 
     public CoffeeShop() throws HeadlessException {
