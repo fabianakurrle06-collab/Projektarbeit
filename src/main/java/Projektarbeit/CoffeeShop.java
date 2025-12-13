@@ -22,7 +22,9 @@ public class CoffeeShop extends JFrame {
     private JComboBox cbxMilch;
     private JButton btnCreateButton;
     private JTextArea taAusgabe;
-    private JTextField textField1;
+    private JTextField jtGesamtpreisText;
+    private JButton btnOrderButton;
+    private JLabel lblGesamtpreis;
 
     public CoffeeShop() throws HeadlessException {
         setTitle("Eingabe für die Bestellung im Coffe Shop");
@@ -36,9 +38,31 @@ public class CoffeeShop extends JFrame {
         btnCreateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+            ausgeben();
             }
         });
+
+
+
+    }
+
+
+    public void ausgeben(){
+        String sDrinkwahl = cbxDrinkBox.getSelectedItem().toString();
+        String sSize = cbxGroeße.getSelectedItem().toString();
+//        boolean bVanille = vanilleRadioButton.isSelected();
+//        boolean bCaramell = caramellRadioButton.isSelected();
+//        boolean bPistazie = pistazieRadioButton.isSelected();
+        String sMilk = cbxMilch.getSelectedItem().toString();
+
+        taAusgabe.setText(" Drink: " + sDrinkwahl
+                            + "\n Size: " + sSize
+                            + "\n Flavour: "      //      + bVanille + bCaramell + bPistazie
+                            + "\n Milk: " + sMilk);
+
+
+
+
     }
 
     public static void main(String[] args) {
