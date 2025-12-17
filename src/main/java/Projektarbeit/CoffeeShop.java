@@ -67,6 +67,12 @@ public class CoffeeShop extends JFrame {
         flavourGroup.add(caramellRadioButton);
         flavourGroup.add(pistazieRadioButton);
 
+        btnOrderButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
 
         public void ausgeben(){
@@ -77,23 +83,19 @@ public class CoffeeShop extends JFrame {
     }
 
         public void speichern(){
-            speichernButton.addActionListener(e -> {
-                String drink = cbxDrinkBox.getSelectedItem().toString();
-                String size = cbxGroeße.getSelectedItem().toString();
-                String milk = cbxMilch.getSelectedItem().toString();
+                String sDrink = cbxDrinkBox.getSelectedItem().toString();
+                String sSize = cbxGroeße.getSelectedItem().toString();
+                String sMilk = cbxMilch.getSelectedItem().toString();
 
-                boolean vanille = vanilleRadioButton.isSelected();
-                boolean caramell = caramellRadioButton.isSelected();
-                boolean pistazie = pistazieRadioButton.isSelected();
+                boolean bVanille = vanilleRadioButton.isSelected();
+                boolean bCaramell = caramellRadioButton.isSelected();
+                boolean bPistazie = pistazieRadioButton.isSelected();
 
                 CoffeeOrder order = new CoffeeOrder(
-                        drink, vanille, size, caramell, pistazie, milk
+                        sDrink, bVanille, sSize, bCaramell, bPistazie, sMilk
                 );
-
-                coffeeOrderlist.add(order);
-            });
-
         }
+
 
     public static void main(String[] args) {
         new CoffeeShop();

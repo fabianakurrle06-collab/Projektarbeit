@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Projektarbeit.CoffeeShop">
-  <grid id="27dc6" binding="jpCoffePanel" layout-manager="GridLayoutManager" row-count="14" column-count="10" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="jpCoffePanel" layout-manager="GridLayoutManager" row-count="14" column-count="11" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="775" height="561"/>
@@ -12,7 +12,7 @@
     <children>
       <component id="c86f7" class="javax.swing.JLabel" binding="lblTitel">
         <constraints>
-          <grid row="0" column="1" row-span="1" col-span="8" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="1" row-span="1" col-span="9" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="Hiragino Mincho ProN" size="36" style="1"/>
@@ -22,7 +22,7 @@
       </component>
       <component id="58dec" class="javax.swing.JLabel" binding="lblCreateDrink">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="8" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="9" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="Hiragino Mincho ProN" size="24"/>
@@ -122,7 +122,7 @@
       </vspacer>
       <hspacer id="76203">
         <constraints>
-          <grid row="0" column="9" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="10" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
       </hspacer>
       <component id="28f46" class="javax.swing.JLabel">
@@ -167,9 +167,9 @@
           <background color="-8885663"/>
           <font name="Hiragino Mincho ProN" size="16"/>
           <model>
-            <item value="Hafermilch"/>
-            <item value="Sojamilch"/>
-            <item value="Laktosefreie Milch"/>
+            <item value="Hafermilch (+0,50)"/>
+            <item value="Sojamilch (+0,50)"/>
+            <item value="Laktosefreie Milch (+0,50)"/>
             <item value="Milch"/>
           </model>
         </properties>
@@ -186,7 +186,7 @@
       </component>
       <component id="68c75" class="javax.swing.JTextField" binding="jtGesamtpreisText">
         <constraints>
-          <grid row="11" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="11" column="9" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
@@ -197,7 +197,7 @@
       </component>
       <component id="25953" class="javax.swing.JLabel" binding="lblGesamtpreis">
         <constraints>
-          <grid row="10" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="10" column="9" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="Hiragino Mincho ProN" size="16"/>
@@ -207,7 +207,7 @@
       </component>
       <component id="1c7f0" class="javax.swing.JButton" binding="btnOrderButton">
         <constraints>
-          <grid row="9" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="9" column="9" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-8885663"/>
@@ -216,20 +216,9 @@
           <text value="Order"/>
         </properties>
       </component>
-      <component id="93eb0" class="javax.swing.JTextArea" binding="taAusgabe">
-        <constraints>
-          <grid row="7" column="8" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="50"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-2108204"/>
-          <text value=""/>
-        </properties>
-      </component>
       <component id="40ccf" class="javax.swing.JButton" binding="btnCreateButton">
         <constraints>
-          <grid row="6" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="9" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-8885663"/>
@@ -241,12 +230,12 @@
       </component>
       <vspacer id="d220e">
         <constraints>
-          <grid row="8" column="8" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <grid row="8" column="9" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
       <component id="c9088" class="javax.swing.JButton" binding="speichernButton" default-binding="true">
         <constraints>
-          <grid row="12" column="9" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="12" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="Hiragino Mincho ProN"/>
@@ -255,13 +244,29 @@
       </component>
       <component id="e1ea4" class="javax.swing.JButton" binding="clearButton" default-binding="true">
         <constraints>
-          <grid row="13" column="9" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="13" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="Hiragino Mincho ProN"/>
           <text value="Clear"/>
         </properties>
       </component>
+      <scrollpane id="d4723">
+        <constraints>
+          <grid row="7" column="9" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="93eb0" class="javax.swing.JTextArea" binding="taAusgabe">
+            <constraints/>
+            <properties>
+              <background color="-2108204"/>
+              <text value=""/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
     </children>
   </grid>
 </form>

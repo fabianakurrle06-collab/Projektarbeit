@@ -32,16 +32,27 @@ public class CoffeeOrder {
 
 
     public double berechnePreis() {
-        double preis = 3.0; // Basispreis
+        double preis = 0.0;
 
-        if (sSize.equals("Mittel")) preis += 1.0;
-        if (sSize.equals("Groß")) preis += 2.0;
+
+
+        if (sDrink.equals("Espresso")) preis = 2.7;
+        if (sDrink.equals("Cappuccino")) preis = 3.5;
+        if (sDrink.equals("Latte Macchiato")) preis = 5;
+        if (sDrink.equals("Americano")) preis = 4;
+
+        if (sSize.equals("Small")) preis += 0.0;
+        if (sSize.equals("Medium")) preis += 1.0;
+        if (sSize.equals("Large")) preis += 2.0;
 
         if (bVanille) preis += 0.5;
-        if (bCaramell) preis += 0.5;
-        if (bPistazie) preis += 0.7;
+        if (bCaramell) preis += 1.0;
+        if (bPistazie) preis += 1.5;
 
-        if (sMilk.equals("Hafer")) preis += 0.5;
+        if (sMilk.equals("Milch")) preis += 0.0;
+        else
+            preis += 0.5;
+
 
         return preis;
     }
