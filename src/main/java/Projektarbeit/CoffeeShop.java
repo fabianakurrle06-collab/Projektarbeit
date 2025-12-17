@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class CoffeeShop extends JFrame {
 
@@ -43,9 +44,10 @@ public class CoffeeShop extends JFrame {
         });
 
     }
+    private ArrayList <CoffeeOrder> coffeeOrderlist = new ArrayList<CoffeeOrder>();
 
 
-    public void ausgeben(){
+        public void ausgeben(){
         String sDrinkwahl = cbxDrinkBox.getSelectedItem().toString();
         String sSize = cbxGroeße.getSelectedItem().toString();
 //        boolean bVanille = vanilleRadioButton.isSelected();
@@ -55,10 +57,12 @@ public class CoffeeShop extends JFrame {
 
         taAusgabe.setText(" Drink: " + sDrinkwahl
                             + "\n Size: " + sSize
-                            + "\n Flavour: "      //      + bVanille + bCaramell + bPistazie
+                            + "\n Flavour: "       //   + bVanille + bCaramell + bPistazie
                             + "\n Milk: " + sMilk);
 
-
+            for (CoffeeShop coffeeShop: coffeeOrderlist) {
+                taAusgabe.setText(taAusgabe.getText() + "\n" + coffeeOrder.ausgeben());
+            }
     }
 
     public static void main(String[] args) {
