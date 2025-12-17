@@ -42,8 +42,6 @@ public class CoffeeShop extends JFrame {
             }
         });
 
-
-
     }
 
 
@@ -59,8 +57,6 @@ public class CoffeeShop extends JFrame {
                             + "\n Size: " + sSize
                             + "\n Flavour: "      //      + bVanille + bCaramell + bPistazie
                             + "\n Milk: " + sMilk);
-
-
 
 
     }
