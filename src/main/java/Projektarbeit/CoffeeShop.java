@@ -26,6 +26,10 @@ public class CoffeeShop extends JFrame {
     private JTextField jtGesamtpreisText;
     private JButton btnOrderButton;
     private JLabel lblGesamtpreis;
+    private JButton speichernButton;
+    private JButton clearButton;
+
+    private ArrayList <CoffeeOrder> coffeeOrderlist = new ArrayList<CoffeeOrder>();
 
     public CoffeeShop() throws HeadlessException {
         setTitle("Eingabe für die Bestellung im Coffe Shop");
@@ -43,8 +47,20 @@ public class CoffeeShop extends JFrame {
             }
         });
 
+        speichernButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        clearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
-    private ArrayList <CoffeeOrder> coffeeOrderlist = new ArrayList<CoffeeOrder>();
+
 
 
         public void ausgeben(){
