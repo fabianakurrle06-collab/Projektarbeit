@@ -34,7 +34,7 @@ public class CoffeeShop extends JFrame {
     public CoffeeShop() throws HeadlessException {
         setTitle("Eingabe für die Bestellung im Coffe Shop");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(600, 500);
+        setSize(1000, 800);
         setContentPane(jpCoffePanel);
         setVisible(true);
 
@@ -50,6 +50,8 @@ public class CoffeeShop extends JFrame {
         speichernButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                speichern();
+
 
             }
         });
@@ -59,27 +61,39 @@ public class CoffeeShop extends JFrame {
 
             }
         });
+        // damit man nur einen RadioButton auswählen kann
+        ButtonGroup flavourGroup = new ButtonGroup();
+        flavourGroup.add(vanilleRadioButton);
+        flavourGroup.add(caramellRadioButton);
+        flavourGroup.add(pistazieRadioButton);
+
     }
-
-
 
         public void ausgeben(){
-        String sDrinkwahl = cbxDrinkBox.getSelectedItem().toString();
-        String sSize = cbxGroeße.getSelectedItem().toString();
-//        boolean bVanille = vanilleRadioButton.isSelected();
-//        boolean bCaramell = caramellRadioButton.isSelected();
-//        boolean bPistazie = pistazieRadioButton.isSelected();
-        String sMilk = cbxMilch.getSelectedItem().toString();
-
-        taAusgabe.setText(" Drink: " + sDrinkwahl
-                            + "\n Size: " + sSize
-                            + "\n Flavour: "       //   + bVanille + bCaramell + bPistazie
-                            + "\n Milk: " + sMilk);
-
-            for (CoffeeShop coffeeShop: coffeeOrderlist) {
+            for (CoffeeOrder coffeeOrder: coffeeOrderlist){ //for each Schleife
                 taAusgabe.setText(taAusgabe.getText() + "\n" + coffeeOrder.ausgeben());
             }
+
     }
+
+        public void speichern(){
+            speichernButton.addActionListener(e -> {
+                String drink = cbxDrinkBox.getSelectedItem().toString();
+                String size = cbxGroeße.getSelectedItem().toString();
+                String milk = cbxMilch.getSelectedItem().toString();
+
+                boolean vanille = vanilleRadioButton.isSelected();
+                boolean caramell = caramellRadioButton.isSelected();
+                boolean pistazie = pistazieRadioButton.isSelected();
+
+                CoffeeOrder order = new CoffeeOrder(
+                        drink, vanille, size, caramell, pistazie, milk
+                );
+
+                coffeeOrderlist.add(order);
+            });
+
+        }
 
     public static void main(String[] args) {
         new CoffeeShop();
