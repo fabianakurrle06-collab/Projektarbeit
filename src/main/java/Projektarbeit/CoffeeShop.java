@@ -61,8 +61,9 @@ public class CoffeeShop extends JFrame {
 
             }
         });
-        // damit man nur einen RadioButton auswählen kann
-        ButtonGroup flavourGroup = new ButtonGroup();
+
+
+        ButtonGroup flavourGroup = new ButtonGroup();           // damit man nur einen RadioButton auswählen kann (KI als Hilfe)
         flavourGroup.add(vanilleRadioButton);
         flavourGroup.add(caramellRadioButton);
         flavourGroup.add(pistazieRadioButton);
