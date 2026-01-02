@@ -39,7 +39,7 @@ public class CoffeeShop extends JFrame {
         setVisible(true);
 
 
-
+        // Ausgeben
         btnCreateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -47,6 +47,7 @@ public class CoffeeShop extends JFrame {
             }
         });
 
+        // Speichern
         speichernButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -55,28 +56,47 @@ public class CoffeeShop extends JFrame {
 
             }
         });
+
+        // Clear
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+            taAusgabe.setText("");
+            coffeeOrderlist.clear();
+            jtGesamtpreisText.setText("");
             }
         });
 
-
+        // RadioButtons gruppieren
         ButtonGroup flavourGroup = new ButtonGroup();           // damit man nur einen RadioButton auswählen kann (KI als Hilfe)
         flavourGroup.add(vanilleRadioButton);
         flavourGroup.add(caramellRadioButton);
         flavourGroup.add(pistazieRadioButton);
 
+        initObjekte();
+
+        // Gesamtpreis
         btnOrderButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                berechneGesamtsumme();
             }
         });
+
+        setVisible(true);
     }
+        // Methoden
+
+        public void initObjekte(){
+        coffeeOrderlist.add(new CoffeeOrder("Espresso", false,"Small", false, false, "Milch"));
+            coffeeOrderlist.add(new CoffeeOrder("Cappuccino", true,"Medium", false, false, "Hafermilch"));
+            coffeeOrderlist.add(new CoffeeOrder("Latte Macchiato", false,"Large", true, false, "Sojamilch"));
+            ausgeben();
+        }
+
 
         public void ausgeben(){
+            taAusgabe.setText(""); //vorher leeren
             for (CoffeeOrder coffeeOrder: coffeeOrderlist){ //for each Schleife
                 taAusgabe.setText(taAusgabe.getText() + "\n" + coffeeOrder.ausgeben());
             }
@@ -84,6 +104,7 @@ public class CoffeeShop extends JFrame {
     }
 
         public void speichern(){
+            try {
                 String sDrink = cbxDrinkBox.getSelectedItem().toString();
                 String sSize = cbxGroeße.getSelectedItem().toString();
                 String sMilk = cbxMilch.getSelectedItem().toString();
@@ -95,6 +116,8 @@ public class CoffeeShop extends JFrame {
                 CoffeeOrder order = new CoffeeOrder(
                         sDrink, bVanille, sSize, bCaramell, bPistazie, sMilk
                 );
+
+                coffeeOrderlist.add(order);
         }
 
 

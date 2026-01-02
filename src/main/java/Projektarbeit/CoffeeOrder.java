@@ -7,6 +7,7 @@ public class CoffeeOrder {
     private boolean bCaramell;
     private boolean bPistazie;
     private String sMilk;
+    private int iAnzahl;
 
     public CoffeeOrder(String sDrink, boolean bVanille, String sSize, boolean bCaramell, boolean bPistazie, String sMilk) {
         this.sDrink = sDrink;
@@ -15,6 +16,7 @@ public class CoffeeOrder {
         this.bCaramell = bCaramell;
         this.bPistazie = bPistazie;
         this.sMilk = sMilk;
+        this.iAnzahl = iAnzahl;
     }
 
     public String ausgeben() {
@@ -23,7 +25,7 @@ public class CoffeeOrder {
             if (bCaramell) flavour += "Caramell ";
             if (bPistazie) flavour += "Pistazie ";
 
-            return "Drink: " + sDrink +
+            return "Drink: " + sDrink + " (" + iAnzahl + "x)" +
                     "\nGröße: " + sSize +
                     "\nFlavour: " + flavour +
                     "\nMilch: " + sMilk +
@@ -54,7 +56,7 @@ public class CoffeeOrder {
             preis += 0.5;
 
 
-        return preis;
+        return preis * iAnzahl;
     }
 
 }
