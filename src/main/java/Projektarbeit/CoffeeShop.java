@@ -28,6 +28,7 @@ public class CoffeeShop extends JFrame {
     private JButton speichernButton;
     private JButton clearButton;
     private JTextField jtAnzahl;
+    private JLabel lblAbzahl;
 
     private ArrayList <CoffeeOrder> coffeeOrderlist = new ArrayList<CoffeeOrder>();
 
