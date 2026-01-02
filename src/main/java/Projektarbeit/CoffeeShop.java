@@ -21,13 +21,13 @@ public class CoffeeShop extends JFrame {
     private JRadioButton pistazieRadioButton;
     private JLabel lblMilk;
     private JComboBox cbxMilch;
-    private JButton btnCreateButton;
     private JTextArea taAusgabe;
     private JTextField jtGesamtpreisText;
     private JButton btnOrderButton;
     private JLabel lblGesamtpreis;
     private JButton speichernButton;
     private JButton clearButton;
+    private JTextField jtAnzahl;
 
     private ArrayList <CoffeeOrder> coffeeOrderlist = new ArrayList<CoffeeOrder>();
 
@@ -37,15 +37,9 @@ public class CoffeeShop extends JFrame {
         setSize(1000, 800);
         setContentPane(jpCoffePanel);
         setVisible(true);
+        initObjekte(); //damit Liste nicht leer ist
 
 
-        // Ausgeben
-        btnCreateButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            ausgeben();
-            }
-        });
 
         // Speichern
         speichernButton.addActionListener(new ActionListener() {
@@ -88,23 +82,34 @@ public class CoffeeShop extends JFrame {
         // Methoden
 
         public void initObjekte(){
-        coffeeOrderlist.add(new CoffeeOrder("Espresso", false,"Small", false, false, "Milch"));
-            coffeeOrderlist.add(new CoffeeOrder("Cappuccino", true,"Medium", false, false, "Hafermilch"));
-            coffeeOrderlist.add(new CoffeeOrder("Latte Macchiato", false,"Large", true, false, "Sojamilch"));
+        coffeeOrderlist.add(new CoffeeOrder("Espresso", false,"Small", false, false, "Milch", 1));
+            coffeeOrderlist.add(new CoffeeOrder("Cappuccino", true,"Medium", false, false, "Hafermilch", 1));
+            coffeeOrderlist.add(new CoffeeOrder("Latte Macchiato", false,"Large", true, false, "Sojamilch", 1));
             ausgeben();
         }
 
 
         public void ausgeben(){
             taAusgabe.setText(""); //vorher leeren
-            for (CoffeeOrder coffeeOrder: coffeeOrderlist){ //for each Schleife
-                taAusgabe.setText(taAusgabe.getText() + "\n" + coffeeOrder.ausgeben());
+            for (CoffeeOrder order: coffeeOrderlist){ //for each Schleife
+                taAusgabe.append(order.ausgeben() + "---------------\n");
             }
 
     }
 
+        public void berechneGesamtsumme(){
+            double summe = 0;
+            for (CoffeeOrder order : coffeeOrderlist){
+                summe += order.berechnePreis();
+            }
+            jtGesamtpreisText.setText(summe+ " €");
+            }
+
         public void speichern(){
             try {
+                // prüfe ob Zahl im Textfeld steht
+                int iAnzahl = Integer.parseInt(jtAnzahl.getText());
+
                 String sDrink = cbxDrinkBox.getSelectedItem().toString();
                 String sSize = cbxGroeße.getSelectedItem().toString();
                 String sMilk = cbxMilch.getSelectedItem().toString();
@@ -113,11 +118,16 @@ public class CoffeeShop extends JFrame {
                 boolean bCaramell = caramellRadioButton.isSelected();
                 boolean bPistazie = pistazieRadioButton.isSelected();
 
+
                 CoffeeOrder order = new CoffeeOrder(
-                        sDrink, bVanille, sSize, bCaramell, bPistazie, sMilk
-                );
+                        sDrink, bVanille, sSize, bCaramell, bPistazie, sMilk, iAnzahl);
 
                 coffeeOrderlist.add(order);
+                ausgeben();
+
+                } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "Fehler: 'Anzahl' muss eine Zahl sein!", "Eingabefehler", JOptionPane.ERROR_MESSAGE);
+            }
         }
 
 

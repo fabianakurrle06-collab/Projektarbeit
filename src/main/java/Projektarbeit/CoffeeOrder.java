@@ -9,7 +9,7 @@ public class CoffeeOrder {
     private String sMilk;
     private int iAnzahl;
 
-    public CoffeeOrder(String sDrink, boolean bVanille, String sSize, boolean bCaramell, boolean bPistazie, String sMilk) {
+    public CoffeeOrder(String sDrink, boolean bVanille, String sSize, boolean bCaramell, boolean bPistazie, String sMilk, int iAnzahl) {
         this.sDrink = sDrink;
         this.bVanille = bVanille;
         this.sSize = sSize;
