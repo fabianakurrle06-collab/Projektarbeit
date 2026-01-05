@@ -73,7 +73,7 @@ public class CoffeeShop extends JFrame {
         btnFilterbutton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                filtereNachMilch("Hafermilch");
+                filtereNachMilch("Milch");
             }
         });
     }
