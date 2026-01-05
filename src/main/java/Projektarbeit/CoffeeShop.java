@@ -126,6 +126,27 @@ public class CoffeeShop extends JFrame {
             }
         }
 
+        public void filtereNachMilch(String filterTyp){
+        // 1. Textfeld leeren
+            taAusgabe.setText("");
+
+        // 2. Schleife über die Liste
+        for (CoffeeOrder order : coffeeOrderlist) {
+            //3. Selektive Auswahl (Filter)
+            //wir prüfen, ob das Attribut sMilk dem Filter entspricht
+            if (order.getsMilk().equals(filterTyp)){
+                String alterText = taAusgabe.getText();
+                String neuerEintrag = order.ausgeben() + "---------------\n";
+                taAusgabe.setText(alterText + neuerEintrag);
+            }
+        }
+
+        //Kleiner Hinweis, falls nicht gefunden wurde
+            if (taAusgabe.getText().equals("")){
+                taAusgabe.setText("Keine Bestellung mit " + filterTyp + " gefunden.");
+            }
+    }
+
     public static void main(String[] args) {
         new CoffeeShop();
 
