@@ -144,7 +144,7 @@ public class CoffeeShop extends JFrame {
             }
         }
 
-        //Kleiner Hinweis, falls nicht gefunden wurde
+        // falls nicht gefunden wurde
             if (taAusgabe.getText().equals("")){
                 taAusgabe.setText("Keine Bestellung mit " + filterTyp + " gefunden.");
             }
