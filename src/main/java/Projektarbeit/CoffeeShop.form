@@ -245,7 +245,9 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-8885663"/>
+        </properties>
       </component>
       <component id="c9088" class="javax.swing.JButton" binding="speichernButton" default-binding="true">
         <constraints>
