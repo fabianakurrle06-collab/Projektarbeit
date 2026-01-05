@@ -29,7 +29,7 @@ public class CoffeeShop extends JFrame {
     private JButton clearButton;
     private JTextField jtAnzahl;
     private JLabel lblAbzahl;
-    private JButton btnFilterbutton;
+    private JButton btnFilterVeganbutton;
 
 
     private ArrayList <CoffeeOrder> coffeeOrderlist = new ArrayList<CoffeeOrder>();
@@ -70,10 +70,10 @@ public class CoffeeShop extends JFrame {
         });
 
         setVisible(true);
-        btnFilterbutton.addActionListener(new ActionListener() {
+        btnFilterVeganbutton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                filtereNachMilch("Milch");
+                filtereNachVegan();
             }
         });
     }
@@ -129,7 +129,7 @@ public class CoffeeShop extends JFrame {
             }
         }
 
-        public void filtereNachMilch(String filterTyp){
+        public void filtereNachVegan(){
         // 1. Textfeld leeren
             taAusgabe.setText("");
 
@@ -137,7 +137,7 @@ public class CoffeeShop extends JFrame {
         for (CoffeeOrder order : coffeeOrderlist) {
             //3. Selektive Auswahl (Filter)
             //wir prüfen, ob das Attribut sMilk dem Filter entspricht
-            if (order.getsMilk().equals(filterTyp)){
+            if (order.getsMilk().equals("Hafermilch") || order.getsMilk().equals("Sojamilch")){
                 String alterText = taAusgabe.getText();
                 String neuerEintrag = order.ausgeben() + "---------------\n";
                 taAusgabe.setText(alterText + neuerEintrag);
@@ -146,7 +146,7 @@ public class CoffeeShop extends JFrame {
 
         // falls nicht gefunden wurde
             if (taAusgabe.getText().equals("")){
-                taAusgabe.setText("Keine Bestellung mit " + filterTyp + " gefunden.");
+                taAusgabe.setText("Keine vegane Bestellung vorhanden.");
             }
     }
 
