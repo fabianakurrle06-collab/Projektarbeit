@@ -280,6 +280,15 @@
           </component>
         </children>
       </scrollpane>
+      <component id="d1134" class="javax.swing.JButton" binding="btnFilterbutton">
+        <constraints>
+          <grid row="12" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-8885663"/>
+          <text value="Filter"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

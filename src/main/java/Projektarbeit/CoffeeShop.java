@@ -1,10 +1,6 @@
 package Projektarbeit;
 
 import javax.swing.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -33,6 +29,7 @@ public class CoffeeShop extends JFrame {
     private JButton clearButton;
     private JTextField jtAnzahl;
     private JLabel lblAbzahl;
+    private JButton btnFilterbutton;
 
 
     private ArrayList <CoffeeOrder> coffeeOrderlist = new ArrayList<CoffeeOrder>();
@@ -73,6 +70,12 @@ public class CoffeeShop extends JFrame {
         });
 
         setVisible(true);
+        btnFilterbutton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                filtereNachMilch("Hafermilch");
+            }
+        });
     }
         // Methoden
 
