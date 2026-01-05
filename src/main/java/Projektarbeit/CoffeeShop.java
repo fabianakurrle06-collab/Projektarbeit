@@ -68,7 +68,6 @@ public class CoffeeShop extends JFrame {
         flavourGroup.add(caramellRadioButton);
         flavourGroup.add(pistazieRadioButton);
 
-        initObjekte();
 
         // Gesamtpreis
         btnOrderButton.addActionListener(new ActionListener() {
