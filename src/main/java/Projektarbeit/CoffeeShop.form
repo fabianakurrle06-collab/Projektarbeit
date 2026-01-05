@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="jpCoffePanel" layout-manager="GridLayoutManager" row-count="13" column-count="11" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="775" height="560"/>
+      <xy x="20" y="20" width="775" height="534"/>
     </constraints>
     <properties>
       <background color="-4871510"/>
@@ -223,22 +223,6 @@
           <grid row="8" column="9" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
-      <scrollpane id="d4723">
-        <constraints>
-          <grid row="7" column="9" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
-        <border type="none"/>
-        <children>
-          <component id="93eb0" class="javax.swing.JTextArea" binding="taAusgabe">
-            <constraints/>
-            <properties>
-              <background color="-2108204"/>
-              <text value=""/>
-            </properties>
-          </component>
-        </children>
-      </scrollpane>
       <component id="69c6c" class="javax.swing.JTextField" binding="jtAnzahl">
         <constraints>
           <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
@@ -262,17 +246,6 @@
           <text value="Speichern"/>
         </properties>
       </component>
-      <component id="e1ea4" class="javax.swing.JButton" binding="clearButton" default-binding="true">
-        <constraints>
-          <grid row="2" column="9" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-8885663"/>
-          <font size="20"/>
-          <foreground color="-13362919"/>
-          <text value="Clear"/>
-        </properties>
-      </component>
       <component id="5c776" class="javax.swing.JLabel" binding="lblAbzahl">
         <constraints>
           <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -281,6 +254,17 @@
           <font name="Hiragino Mincho ProN" size="20" style="0"/>
           <foreground color="-14413294"/>
           <text value="Anzahl:"/>
+        </properties>
+      </component>
+      <component id="e1ea4" class="javax.swing.JButton" binding="clearButton" default-binding="true">
+        <constraints>
+          <grid row="12" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-8885663"/>
+          <font size="20"/>
+          <foreground color="-13362919"/>
+          <text value="Clear"/>
         </properties>
       </component>
     </children>

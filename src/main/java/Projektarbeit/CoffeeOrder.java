@@ -59,4 +59,17 @@ public class CoffeeOrder {
         return preis * iAnzahl;
     }
 
+    //diese Methode braucht die Tabelle um die Werte anzuzeigen
+    public String getsDrink(){
+        return sDrink;
+    }
+    public String getsSize(){
+        return sSize;
+    }
+    public String getsMilk(){
+        return sMilk;
+    }
+    public int getiAnzahl(){
+        return iAnzahl;
+    }
 }

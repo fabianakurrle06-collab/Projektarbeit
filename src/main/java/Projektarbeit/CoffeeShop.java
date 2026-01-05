@@ -1,6 +1,10 @@
 package Projektarbeit;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,6 +34,7 @@ public class CoffeeShop extends JFrame {
     private JTextField jtAnzahl;
     private JLabel lblAbzahl;
 
+
     private ArrayList <CoffeeOrder> coffeeOrderlist = new ArrayList<CoffeeOrder>();
 
     public CoffeeShop() throws HeadlessException {
@@ -38,8 +43,7 @@ public class CoffeeShop extends JFrame {
         setSize(1000, 800);
         setContentPane(jpCoffePanel);
         setVisible(true);
-        initObjekte(); //damit Liste nicht leer ist
-
+        initObjekte();
 
 
         // Speichern
@@ -47,8 +51,6 @@ public class CoffeeShop extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 speichern();
-
-
             }
         });
 
@@ -62,13 +64,6 @@ public class CoffeeShop extends JFrame {
             }
         });
 
-        // RadioButtons gruppieren
-        ButtonGroup flavourGroup = new ButtonGroup();           // damit man nur einen RadioButton auswählen kann (KI als Hilfe)
-        flavourGroup.add(vanilleRadioButton);
-        flavourGroup.add(caramellRadioButton);
-        flavourGroup.add(pistazieRadioButton);
-
-
         // Gesamtpreis
         btnOrderButton.addActionListener(new ActionListener() {
             @Override
@@ -80,6 +75,7 @@ public class CoffeeShop extends JFrame {
         setVisible(true);
     }
         // Methoden
+
 
         public void initObjekte(){
         coffeeOrderlist.add(new CoffeeOrder("Espresso", false,"Small", false, false, "Milch", 1));
@@ -129,7 +125,6 @@ public class CoffeeShop extends JFrame {
                 JOptionPane.showMessageDialog(this, "Fehler: 'Anzahl' muss eine Zahl sein!", "Eingabefehler", JOptionPane.ERROR_MESSAGE);
             }
         }
-
 
     public static void main(String[] args) {
         new CoffeeShop();
