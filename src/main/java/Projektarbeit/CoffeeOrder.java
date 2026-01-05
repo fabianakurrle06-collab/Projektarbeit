@@ -25,6 +25,11 @@ public class CoffeeOrder {
             if (bCaramell) flavour += "Caramell ";
             if (bPistazie) flavour += "Pistazie ";
 
+            // wenn String leer, dann "keine"
+            if (flavour.isEmpty()){
+                flavour = "keine";
+            }
+
             return "Drink: " + sDrink + " (" + iAnzahl + "x)" +
                     "\nGröße: " + sSize +
                     "\nFlavour: " + flavour +

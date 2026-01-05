@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.IllegalFormatException;
 
 public class CoffeeShop extends JFrame {
 
@@ -19,6 +20,7 @@ public class CoffeeShop extends JFrame {
     private JRadioButton vanilleRadioButton;
     private JRadioButton caramellRadioButton;
     private JRadioButton pistazieRadioButton;
+    private ButtonGroup flavourGroup;
     private JLabel lblMilk;
     private JComboBox cbxMilch;
     private JTextArea taAusgabe;
@@ -76,6 +78,30 @@ public class CoffeeShop extends JFrame {
                 filtereNachVegan();
             }
         });
+        cbxDrinkBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String ausgewählt = cbxDrinkBox.getSelectedItem().toString();
+
+                if (ausgewählt.equals("Espresso")){
+                    //Felder deaktivieren
+                    cbxMilch.setEnabled(false);
+                    vanilleRadioButton.setEnabled(false);
+                    caramellRadioButton.setEnabled(false);
+                    pistazieRadioButton.setEnabled(false);
+
+                    //Auswahl zurücksetzen, damit kein Flavour/Milch mitgespeichert wird
+                    cbxMilch.setSelectedIndex(0); //wählt das erste Element ("Milch" oder "keine")
+                    flavourGroup.clearSelection();
+                } else {
+                    //für alle anderen Getränke wieder einschalten
+                    cbxMilch.setEnabled(true);
+                    vanilleRadioButton.setEnabled(true);
+                    caramellRadioButton.setEnabled(true);
+                    pistazieRadioButton.setEnabled(true);
+                }
+            }
+        });
     }
         // Methoden
 
@@ -94,6 +120,7 @@ public class CoffeeShop extends JFrame {
                 taAusgabe.append(order.ausgeben() + "---------------\n");
             }
 
+
     }
 
         public void berechneGesamtsumme(){
@@ -106,18 +133,39 @@ public class CoffeeShop extends JFrame {
 
         public void speichern(){
             try {
-                // prüfe ob Zahl im Textfeld steht
+                // 1. leere Eingaben verhindern
+                if (jtAnzahl.getText().isEmpty()){
+                    JOptionPane.showMessageDialog(this,  "Bitte geben Sie eine Anzahl ein!", "Eingabefehler", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+                // 2. Zahl umwandeln
                 int iAnzahl = Integer.parseInt(jtAnzahl.getText());
-
                 String sDrink = cbxDrinkBox.getSelectedItem().toString();
                 String sSize = cbxGroeße.getSelectedItem().toString();
-                String sMilk = cbxMilch.getSelectedItem().toString();
 
-                boolean bVanille = vanilleRadioButton.isSelected();
-                boolean bCaramell = caramellRadioButton.isSelected();
-                boolean bPistazie = pistazieRadioButton.isSelected();
+                //3. negative Zahl oder null
+                if (iAnzahl <= 0) {
+                    JOptionPane.showMessageDialog(this, "Die Anzahl muss eine positive Zahl (mindestens 1) sein!", "Eingabefehler", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
 
+                // Espresso
+                String sMilk;
+                boolean bVanille, bCaramell, bPistazie;
+                if (sDrink.equals("Espresso")) {
+                    sMilk = "Keine"; // Espresso hat keine Milch
+                    bVanille = false;
+                    bCaramell = false;
+                    bPistazie = false;
+                } else {
+                    //normales Auslesen für alle anderen Getränke
+                    sMilk = cbxMilch.getSelectedItem().toString();
+                    bVanille = vanilleRadioButton.isSelected();
+                    bCaramell = caramellRadioButton.isSelected();
+                    bPistazie = pistazieRadioButton.isSelected();
+                }
 
+                // Objekt erstellen und speichern
                 CoffeeOrder order = new CoffeeOrder(
                         sDrink, bVanille, sSize, bCaramell, bPistazie, sMilk, iAnzahl);
 
