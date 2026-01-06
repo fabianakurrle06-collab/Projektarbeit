@@ -39,10 +39,16 @@ public class CoffeeShop extends JFrame {
     public CoffeeShop() throws HeadlessException {
         setTitle("Eingabe für die Bestellung im Coffe Shop");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1000, 800);
+        setSize(900, 800);
         setContentPane(jpCoffePanel);
         setVisible(true);
         initObjekte();
+
+        // Flavour-Group initialiseren (damit nur 1 wählbar ist)
+        flavourGroup = new ButtonGroup();
+        flavourGroup.add(vanilleRadioButton);
+        flavourGroup.add(caramellRadioButton);
+        flavourGroup.add(pistazieRadioButton);
 
 
         // Speichern
