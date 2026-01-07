@@ -75,6 +75,7 @@ public class CoffeeShop extends JFrame {
             }
         });
 
+        // Vegan
         setVisible(true);
         btnFilterVeganbutton.addActionListener(new ActionListener() {
             @Override
@@ -82,6 +83,7 @@ public class CoffeeShop extends JFrame {
                 filtereNachVegan();
             }
         });
+
         cbxDrinkBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -128,7 +130,7 @@ public class CoffeeShop extends JFrame {
     }
 
         public void berechneGesamtsumme(){
-            double summe = 0;
+            double summe = 0.00;
             for (CoffeeOrder order : coffeeOrderlist){
                 summe += order.berechnePreis();
             }
