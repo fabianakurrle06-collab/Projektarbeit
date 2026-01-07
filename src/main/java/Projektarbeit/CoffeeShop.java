@@ -185,22 +185,22 @@ public class CoffeeShop extends JFrame {
 
         public void filtereNachVegan(){
         // 1. Textfeld leeren
-            taAusgabe.setText("");
+            taVeganAusgabe.setText("");
 
         // 2. Schleife über die Liste
         for (CoffeeOrder order : coffeeOrderlist) {
             //3. Selektive Auswahl (Filter)
             //wir prüfen, ob das Attribut sMilk dem Filter entspricht
             if (order.getsMilk().equals("Hafermilch") || order.getsMilk().equals("Sojamilch")){
-                String alterText = taAusgabe.getText();
+                String alterText = taVeganAusgabe.getText();
                 String neuerEintrag = order.ausgeben() + "---------------\n";
-                taAusgabe.setText(alterText + neuerEintrag);
+                taVeganAusgabe.setText(alterText + neuerEintrag);
             }
         }
 
         // falls nicht gefunden wurde
-            if (taAusgabe.getText().equals("")){
-                taAusgabe.setText("Keine vegane Bestellung vorhanden.");
+            if (taVeganAusgabe.getText().equals("")){
+                taVeganAusgabe.setText("Keine vegane Bestellung vorhanden.");
             }
     }
 
