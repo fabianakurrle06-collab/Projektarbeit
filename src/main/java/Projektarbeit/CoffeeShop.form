@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Projektarbeit.CoffeeShop">
-  <grid id="27dc6" binding="jpCoffePanel" layout-manager="GridLayoutManager" row-count="13" column-count="12" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="jpCoffePanel" layout-manager="GridLayoutManager" row-count="13" column-count="13" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="689" height="534"/>
+      <xy x="20" y="20" width="1190" height="534"/>
     </constraints>
     <properties>
       <background color="-4871510"/>
@@ -18,16 +18,6 @@
           <font name="Hiragino Mincho ProN" size="36" style="1"/>
           <foreground color="-12769500"/>
           <text value="Coffee Shop "/>
-        </properties>
-      </component>
-      <component id="58dec" class="javax.swing.JLabel" binding="lblCreateDrink">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="9" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font name="Hiragino Mincho ProN" size="24"/>
-          <foreground color="-12769500"/>
-          <text value="Create your perfect Drink!"/>
         </properties>
       </component>
       <component id="1ef72" class="javax.swing.JLabel" binding="lblDrink">
@@ -124,7 +114,7 @@
       </vspacer>
       <hspacer id="76203">
         <constraints>
-          <grid row="0" column="11" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="12" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
       </hspacer>
       <component id="28f46" class="javax.swing.JLabel">
@@ -184,7 +174,7 @@
       </component>
       <component id="1c7f0" class="javax.swing.JButton" binding="btnOrderButton">
         <constraints>
-          <grid row="9" column="9" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="9" column="9" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-8885663"/>
@@ -193,11 +183,6 @@
           <text value="Order"/>
         </properties>
       </component>
-      <vspacer id="d220e">
-        <constraints>
-          <grid row="8" column="9" row-span="1" col-span="2" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </vspacer>
       <component id="69c6c" class="javax.swing.JTextField" binding="jtAnzahl">
         <constraints>
           <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
@@ -218,7 +203,7 @@
           <background color="-8885663"/>
           <font name="Hiragino Mincho ProN" size="20"/>
           <foreground color="-8885663"/>
-          <text value="Speichern"/>
+          <text value="Zur Bestellung hinzufügen"/>
         </properties>
       </component>
       <component id="5c776" class="javax.swing.JLabel" binding="lblAbzahl">
@@ -229,17 +214,6 @@
           <font name="Hiragino Mincho ProN" size="20" style="0"/>
           <foreground color="-12769500"/>
           <text value="Anzahl:"/>
-        </properties>
-      </component>
-      <component id="e1ea4" class="javax.swing.JButton" binding="clearButton" default-binding="true">
-        <constraints>
-          <grid row="12" column="11" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-8885663"/>
-          <font name="Hiragino Mincho ProN" size="16"/>
-          <foreground color="-8885663"/>
-          <text value="Clear"/>
         </properties>
       </component>
       <scrollpane id="5f63">
@@ -255,17 +229,6 @@
           </component>
         </children>
       </scrollpane>
-      <component id="d1134" class="javax.swing.JButton" binding="btnFilterVeganbutton">
-        <constraints>
-          <grid row="11" column="11" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-8885663"/>
-          <font name="Hiragino Mincho ProN" size="16"/>
-          <foreground color="-8885663"/>
-          <text value="Vegan"/>
-        </properties>
-      </component>
       <component id="23811" class="javax.swing.JLabel" binding="lblMilk">
         <constraints>
           <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -289,6 +252,51 @@
             <item value="Laktosefreie Milch (+0,50)"/>
             <item value="Milch"/>
           </model>
+        </properties>
+      </component>
+      <vspacer id="d3c1f">
+        <constraints>
+          <grid row="8" column="9" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="d1134" class="javax.swing.JButton" binding="btnFilterVeganbutton">
+        <constraints>
+          <grid row="6" column="11" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-8885663"/>
+          <font name="Hiragino Mincho ProN" size="16"/>
+          <foreground color="-8885663"/>
+          <text value="Vegan"/>
+        </properties>
+      </component>
+      <component id="5b138" class="javax.swing.JTextArea" binding="taVeganAusgabe">
+        <constraints>
+          <grid row="7" column="11" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="58dec" class="javax.swing.JLabel" binding="lblCreateDrink">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="9" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Hiragino Mincho ProN" size="24"/>
+          <foreground color="-12769500"/>
+          <text value="Create your perfect Drink!"/>
+        </properties>
+      </component>
+      <component id="e1ea4" class="javax.swing.JButton" binding="clearButton" default-binding="true">
+        <constraints>
+          <grid row="12" column="12" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-8885663"/>
+          <font name="Hiragino Mincho ProN" size="16"/>
+          <foreground color="-8885663"/>
+          <text value="Clear"/>
         </properties>
       </component>
     </children>

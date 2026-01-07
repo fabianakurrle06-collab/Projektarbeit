@@ -5,7 +5,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.IllegalFormatException;
 
 public class CoffeeShop extends JFrame {
 
@@ -32,6 +31,7 @@ public class CoffeeShop extends JFrame {
     private JTextField jtAnzahl;
     private JLabel lblAbzahl;
     private JButton btnFilterVeganbutton;
+    private JTextArea taVeganAusgabe;
 
 
     private ArrayList <CoffeeOrder> coffeeOrderlist = new ArrayList<CoffeeOrder>();
