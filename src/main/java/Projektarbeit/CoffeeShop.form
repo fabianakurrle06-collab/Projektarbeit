@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="jpCoffePanel" layout-manager="GridLayoutManager" row-count="14" column-count="13" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="1088" height="678"/>
+      <xy x="20" y="20" width="1097" height="578"/>
     </constraints>
     <properties>
       <background color="-4871510"/>
@@ -229,7 +229,7 @@
         </constraints>
         <properties>
           <background color="-8885663"/>
-          <font size="20"/>
+          <font name="Hiragino Mincho ProN" size="20"/>
           <foreground color="-8885663"/>
           <text value="Vegan"/>
         </properties>
