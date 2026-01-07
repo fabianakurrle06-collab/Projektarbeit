@@ -35,7 +35,7 @@ public class CoffeeShop extends JFrame {
     private JLabel lblBild1;
     private JLabel lblBild2;
 
-
+    // ArrayList
     private ArrayList <CoffeeOrder> coffeeOrderlist = new ArrayList<CoffeeOrder>();
 
     public CoffeeShop() throws HeadlessException {
@@ -77,7 +77,7 @@ public class CoffeeShop extends JFrame {
             }
         });
 
-        // Vegan
+        // Vegan Filter
         setVisible(true);
         btnFilterVeganbutton.addActionListener(new ActionListener() {
             @Override
@@ -86,33 +86,15 @@ public class CoffeeShop extends JFrame {
             }
         });
 
+        // wenn Espresso ausgewählt wird
         cbxDrinkBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String ausgewählt = cbxDrinkBox.getSelectedItem().toString();
-
-                if (ausgewählt.equals("Espresso")){
-                    //Felder deaktivieren
-                    cbxMilch.setEnabled(false);
-                    vanilleRadioButton.setEnabled(false);
-                    caramellRadioButton.setEnabled(false);
-                    pistazieRadioButton.setEnabled(false);
-
-                    //Auswahl zurücksetzen, damit kein Flavour/Milch mitgespeichert wird
-                    cbxMilch.setSelectedIndex(0); //wählt das erste Element ("Milch" oder "keine")
-                    flavourGroup.clearSelection();
-                } else {
-                    //für alle anderen Getränke wieder einschalten
-                    cbxMilch.setEnabled(true);
-                    vanilleRadioButton.setEnabled(true);
-                    caramellRadioButton.setEnabled(true);
-                    pistazieRadioButton.setEnabled(true);
-                }
+                espresso();
             }
         });
     }
         // Methoden
-
 
         public void initObjekte(){
         coffeeOrderlist.add(new CoffeeOrder("Espresso", false,"Small", false, false, "Milch", 1));
@@ -125,39 +107,44 @@ public class CoffeeShop extends JFrame {
         public void ausgeben(){
             taAusgabe.setText(""); //vorher leeren
             for (CoffeeOrder order: coffeeOrderlist){ //for each Schleife
-                taAusgabe.append(order.ausgeben() + "---------------\n");
+                taAusgabe.append(order.ausgeben() + "\n");
             }
 
 
     }
 
         public void berechneGesamtsumme(){
-            double summe = 0.00;
+            double dSumme = 0.00;
             for (CoffeeOrder order : coffeeOrderlist){
-                summe += order.berechnePreis();
+                dSumme += order.berechnePreis();
             }
-            jtGesamtpreisText.setText(summe+ " €");
+            jtGesamtpreisText.setText(dSumme+ " €");
             }
 
         public void speichern(){
             try {
-                // 1. leere Eingaben verhindern
+                // wenn Anzahl keine Zahl: Fehlermeldung
                 if (jtAnzahl.getText().isEmpty()){
-                    JOptionPane.showMessageDialog(this,  "Bitte geben Sie eine Anzahl ein!", "Eingabefehler", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(this,
+            "Bitte geben Sie eine Anzahl ein!", "Eingabefehler", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
-                // 2. Zahl umwandeln
+
+
+                // Zahl umwandeln
                 int iAnzahl = Integer.parseInt(jtAnzahl.getText());
+
                 String sDrink = cbxDrinkBox.getSelectedItem().toString();
                 String sSize = cbxGroeße.getSelectedItem().toString();
 
-                //3. negative Zahl oder null
+                // wenn negative Zahl oder null: Fehlermeldung
                 if (iAnzahl <= 0) {
-                    JOptionPane.showMessageDialog(this, "Die Anzahl muss eine positive Zahl (mindestens 1) sein!", "Eingabefehler", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this,
+            "Die Anzahl muss eine positive Zahl (mindestens 1) sein!", "Eingabefehler", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
 
-                // Espresso
+                // wenn Espresso, dann kein Flavour, keine Milch
                 String sMilk;
                 boolean bVanille, bCaramell, bPistazie;
                 if (sDrink.equals("Espresso")) {
@@ -181,26 +168,23 @@ public class CoffeeShop extends JFrame {
                 ausgeben();
 
                 } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(this, "Fehler: 'Anzahl' muss eine Zahl sein!", "Eingabefehler", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this,
+        "Fehler: 'Anzahl' muss eine Zahl sein!", "Eingabefehler", JOptionPane.ERROR_MESSAGE);
             }
         }
 
         public void filtereNachVegan(){
-        // 1. Textfeld leeren
             taVeganAusgabe.setText("");
-
-        // 2. Schleife über die Liste
+            //Schleife über die Liste
         for (CoffeeOrder order : coffeeOrderlist) {
-            //3. Selektive Auswahl (Filter)
-            //wir prüfen, ob das Attribut sMilk dem Filter entspricht
             if (order.getsMilk().equals("Hafermilch (+0,50)") || order.getsMilk().equals("Sojamilch (+0,50)")){
                 String alterText = taVeganAusgabe.getText();
-                String neuerEintrag = order.ausgeben() + "---------------\n";
+                String neuerEintrag = order.ausgeben() + "\n";
                 taVeganAusgabe.setText(alterText + neuerEintrag);
             }
         }
 
-        // falls nicht gefunden wurde
+        // falls keine Vegane Option in Bestellung
             if (taVeganAusgabe.getText().equals("")){
                 taVeganAusgabe.setText("Keine vegane Bestellung vorhanden.");
             }
@@ -211,6 +195,28 @@ public class CoffeeShop extends JFrame {
             coffeeOrderlist.clear();
             jtGesamtpreisText.setText("");
             taVeganAusgabe.setText("");
+        }
+
+        public void espresso() {
+            String ausgewählt = cbxDrinkBox.getSelectedItem().toString();
+
+            if (ausgewählt.equals("Espresso")) {
+                //Felder deaktivieren
+                cbxMilch.setEnabled(false);
+                vanilleRadioButton.setEnabled(false);
+                caramellRadioButton.setEnabled(false);
+                pistazieRadioButton.setEnabled(false);
+
+                //Auswahl zurücksetzen, damit kein Flavour/Milch mitgespeichert wird
+                cbxMilch.setSelectedIndex(0); //wählt das erste Element ("Milch" oder "keine")
+                flavourGroup.clearSelection();
+            } else {
+                //für alle anderen Getränke wieder einschalten
+                cbxMilch.setEnabled(true);
+                vanilleRadioButton.setEnabled(true);
+                caramellRadioButton.setEnabled(true);
+                pistazieRadioButton.setEnabled(true);
+            }
         }
 
     public static void main(String[] args) {

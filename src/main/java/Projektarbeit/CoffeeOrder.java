@@ -20,19 +20,19 @@ public class CoffeeOrder {
     }
 
     public String ausgeben() {
-            String flavour = "";
-            if (bVanille) flavour += "Vanille ";
-            if (bCaramell) flavour += "Caramell ";
-            if (bPistazie) flavour += "Pistazie ";
+            String sFlavour = "";
+            if (bVanille) sFlavour += "Vanille ";
+            if (bCaramell) sFlavour += "Caramell ";
+            if (bPistazie) sFlavour += "Pistazie ";
 
             // wenn String leer, dann "keine"
-            if (flavour.isEmpty()){
-                flavour = "keine";
+            if (sFlavour.isEmpty()){
+                sFlavour = "keine";
             }
 
             return "Drink: " + sDrink + " (" + iAnzahl + "x)" +
                     "\nGröße: " + sSize +
-                    "\nFlavour: " + flavour +
+                    "\nFlavour: " + sFlavour +
                     "\nMilch: " + sMilk +
                     "\nPreis: " + berechnePreis() + " €\n";
         }
@@ -40,8 +40,6 @@ public class CoffeeOrder {
 
     public double berechnePreis() {
         double preis = 0.00;
-
-
 
         if (sDrink.equals("Espresso")) preis = 2.70;
         if (sDrink.equals("Cappuccino")) preis = 3.50;
@@ -59,7 +57,6 @@ public class CoffeeOrder {
         if (sMilk.equals("Milch")) preis += 0.00;
         else
             preis += 0.50;
-
 
         return preis * iAnzahl;
     }
