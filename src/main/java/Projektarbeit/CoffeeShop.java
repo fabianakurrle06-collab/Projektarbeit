@@ -39,7 +39,7 @@ public class CoffeeShop extends JFrame {
     public CoffeeShop() throws HeadlessException {
         setTitle("Eingabe für die Bestellung im Coffe Shop");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1000, 900);
+        setSize(1010, 1000);
         setContentPane(jpCoffePanel);
         setVisible(true);
         initObjekte();
