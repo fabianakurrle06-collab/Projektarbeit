@@ -32,6 +32,8 @@ public class CoffeeShop extends JFrame {
     private JLabel lblAnzahl;
     private JButton btnFilterVeganbutton;
     private JTextArea taVeganAusgabe;
+    private JLabel lblBild1;
+    private JLabel lblBild2;
 
 
     private ArrayList <CoffeeOrder> coffeeOrderlist = new ArrayList<CoffeeOrder>();
@@ -39,7 +41,7 @@ public class CoffeeShop extends JFrame {
     public CoffeeShop() throws HeadlessException {
         setTitle("Eingabe für die Bestellung im Coffee Shop");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1000, 1000);
+        setSize(1200, 1200);
         setContentPane(jpCoffePanel);
         setVisible(true);
         initObjekte();
