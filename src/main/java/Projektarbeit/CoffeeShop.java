@@ -114,8 +114,8 @@ public class CoffeeShop extends JFrame {
 
         public void initObjekte(){
         coffeeOrderlist.add(new CoffeeOrder("Espresso", false,"Small", false, false, "Milch", 1));
-            coffeeOrderlist.add(new CoffeeOrder("Cappuccino", true,"Medium", false, false, "Hafermilch", 1));
-            coffeeOrderlist.add(new CoffeeOrder("Latte Macchiato", false,"Large", true, false, "Sojamilch", 1));
+            coffeeOrderlist.add(new CoffeeOrder("Cappuccino", true,"Medium", false, false, "Hafermilch (+0,50)", 1));
+            coffeeOrderlist.add(new CoffeeOrder("Latte Macchiato", false,"Large", true, false, "Sojamilch (+0,50)", 1));
             ausgeben();
         }
 
@@ -191,7 +191,7 @@ public class CoffeeShop extends JFrame {
         for (CoffeeOrder order : coffeeOrderlist) {
             //3. Selektive Auswahl (Filter)
             //wir prüfen, ob das Attribut sMilk dem Filter entspricht
-            if (order.getsMilk().equals("Hafermilch") || order.getsMilk().equals("Sojamilch")){
+            if (order.getsMilk().equals("Hafermilch (+0,50)") || order.getsMilk().equals("Sojamilch (+0,50)")){
                 String alterText = taVeganAusgabe.getText();
                 String neuerEintrag = order.ausgeben() + "---------------\n";
                 taVeganAusgabe.setText(alterText + neuerEintrag);
