@@ -29,7 +29,7 @@ public class CoffeeShop extends JFrame {
     private JButton speichernButton;
     private JButton clearButton;
     private JTextField jtAnzahl;
-    private JLabel lblAbzahl;
+    private JLabel lblAnzahl;
     private JButton btnFilterVeganbutton;
     private JTextArea taVeganAusgabe;
 
@@ -37,14 +37,14 @@ public class CoffeeShop extends JFrame {
     private ArrayList <CoffeeOrder> coffeeOrderlist = new ArrayList<CoffeeOrder>();
 
     public CoffeeShop() throws HeadlessException {
-        setTitle("Eingabe für die Bestellung im Coffe Shop");
+        setTitle("Eingabe für die Bestellung im Coffee Shop");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1000, 1000);
         setContentPane(jpCoffePanel);
         setVisible(true);
         initObjekte();
 
-        // Flavour-Group initialiseren (damit nur 1 wählbar ist)
+        // Flavour-Group initialiseren (damit nur 1 wählbar ist) --> KI als Hilfe
         flavourGroup = new ButtonGroup();
         flavourGroup.add(vanilleRadioButton);
         flavourGroup.add(caramellRadioButton);
@@ -63,9 +63,7 @@ public class CoffeeShop extends JFrame {
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            taAusgabe.setText("");
-            coffeeOrderlist.clear();
-            jtGesamtpreisText.setText("");
+            clear();
             }
         });
 
@@ -203,6 +201,13 @@ public class CoffeeShop extends JFrame {
                 taVeganAusgabe.setText("Keine vegane Bestellung vorhanden.");
             }
     }
+
+        public void clear(){
+            taAusgabe.setText("");
+            coffeeOrderlist.clear();
+            jtGesamtpreisText.setText("");
+            taVeganAusgabe.setText("");
+        }
 
     public static void main(String[] args) {
         new CoffeeShop();
