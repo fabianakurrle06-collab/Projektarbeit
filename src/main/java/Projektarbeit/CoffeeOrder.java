@@ -58,10 +58,13 @@ public class CoffeeOrder {
         else
             preis += 0.50;
 
-        return preis * iAnzahl;
+        preis = preis * iAnzahl;
+
+        // Ergebnis auf eine Nachkommastelle gerundet
+        return Math.round(preis * 100.0) / 100.0;
     }
 
-    //diese Methode braucht die Tabelle um die Werte anzuzeigen
+    // Getter
     public String getsDrink(){
         return sDrink;
     }

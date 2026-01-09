@@ -137,6 +137,17 @@ public class CoffeeShop extends JFrame {
                 String sDrink = cbxDrinkBox.getSelectedItem().toString();
                 String sSize = cbxGroeße.getSelectedItem().toString();
 
+                // Auslesen der ComboBoxen
+                if (sDrink.equals("- Wähle dein Getränk -")) {
+                    JOptionPane.showMessageDialog(this, "Bitte wähle ein Getränk aus!", "Fehler", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+
+                if (sSize.equals("- Wähle die Größe -")){
+                    JOptionPane.showMessageDialog(this, "Wähle eine Größe aus!","Fehler", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+
                 // wenn negative Zahl oder null: Fehlermeldung
                 if (iAnzahl <= 0) {
                     JOptionPane.showMessageDialog(this,
@@ -155,6 +166,12 @@ public class CoffeeShop extends JFrame {
                 } else {
                     //normales Auslesen für alle anderen Getränke
                     sMilk = cbxMilch.getSelectedItem().toString();
+                    // Auswahl Milch - Fehlermeldung
+                    if (sMilk.equals("- Wähle die Milch -")){
+                        JOptionPane.showMessageDialog(this, "Bitte wähle eine Milchsorte aus!", "Fehler", JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+
                     bVanille = vanilleRadioButton.isSelected();
                     bCaramell = caramellRadioButton.isSelected();
                     bPistazie = pistazieRadioButton.isSelected();

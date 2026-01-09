@@ -32,6 +32,7 @@
           <background color="-8885663"/>
           <font name="Hiragino Mincho ProN" size="16"/>
           <model>
+            <item value="- Wähle dein Getränk -"/>
             <item value="Espresso"/>
             <item value="Cappuccino"/>
             <item value="Latte Macchiato"/>
@@ -58,6 +59,7 @@
           <background color="-8885663"/>
           <font name="Hiragino Mincho ProN" size="16"/>
           <model>
+            <item value="- Wähle die Größe -"/>
             <item value="Small"/>
             <item value="Medium"/>
             <item value="Large"/>
@@ -211,6 +213,7 @@
           <background color="-8885663"/>
           <font name="Hiragino Mincho ProN" size="16"/>
           <model>
+            <item value="- Wähle die Milch -"/>
             <item value="Hafermilch (+0,50)"/>
             <item value="Sojamilch (+0,50)"/>
             <item value="Laktosefreie Milch (+0,50)"/>
