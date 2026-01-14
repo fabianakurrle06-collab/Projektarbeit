@@ -40,7 +40,7 @@ public class CoffeeOrder {
                     "\nPreis: " + berechnePreis() + " €\n";
         }
 
-
+ // Methode Preisberechnung
     public double berechnePreis() {
         double preis = 0.00;
 
