@@ -13,8 +13,8 @@ class CoffeeOrderTest {
         //Erwartung: 2.70 * 1 = 2.70
         CoffeeOrder tesOrder = new CoffeeOrder("Espresso", false, "Small", false, false,false, "Milch", 1);
 
-        //assertEquals(Erwartung, Ergebnis der Methode, Toleranz bie Kommazahlen)
-        assertEquals(2.70, tesOrder.berechnePreis(), 0.001); //0.001 technisch notwendig, wenn man mit Kommazahlen rechnet sonst: Ungenauigkeit bei Fließkommazahlen, solange der Unterschied kleiner als 0.0001 ist gilt der Test als bestanden
+        //assertEquals(Erwartung, Ergebnis der Methode, Toleranz bei Kommazahlen)
+        assertEquals(2.70, tesOrder.berechnePreis(), 0.001); //0.001 technisch notwendig, wenn man mit Kommazahlen rechnet sonst: Ungenauigkeit bei Fließkommazahlen, solange der Unterschied kleiner als 0.0001 ist gilt der Test als bestanden --> Gemini(KI) als Hilfe
     }
 
     @Test
