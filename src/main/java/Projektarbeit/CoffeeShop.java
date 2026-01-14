@@ -12,7 +12,7 @@ public class CoffeeShop extends JFrame {
     private JLabel lblTitel;
     private JLabel lblCreateDrink;
     private JLabel lblDrink;
-    private JComboBox cbxDrinkBox;
+    private JComboBox cbxDrink;
     private JLabel lblSize;
     private JComboBox cbxGroeße;
     private JLabel lblFlavour;
@@ -34,6 +34,7 @@ public class CoffeeShop extends JFrame {
     private JTextArea taVeganAusgabe;
     private JLabel lblBild1;
     private JLabel lblBild2;
+    private JRadioButton keineRadioButton;
 
     // ArrayList
     private ArrayList <CoffeeOrder> coffeeOrderlist = new ArrayList<CoffeeOrder>();
@@ -51,6 +52,7 @@ public class CoffeeShop extends JFrame {
         flavourGroup.add(vanilleRadioButton);
         flavourGroup.add(caramellRadioButton);
         flavourGroup.add(pistazieRadioButton);
+        flavourGroup.add(keineRadioButton);
 
 
         // Speichern
@@ -87,7 +89,7 @@ public class CoffeeShop extends JFrame {
         });
 
         // wenn Espresso ausgewählt wird
-        cbxDrinkBox.addActionListener(new ActionListener() {
+        cbxDrink.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 espresso();
@@ -134,7 +136,7 @@ public class CoffeeShop extends JFrame {
                 // Zahl umwandeln
                 int iAnzahl = Integer.parseInt(jtAnzahl.getText());
 
-                String sDrink = cbxDrinkBox.getSelectedItem().toString();
+                String sDrink = cbxDrink.getSelectedItem().toString();
                 String sSize = cbxGroeße.getSelectedItem().toString();
 
                 // Auslesen der ComboBoxen
@@ -212,10 +214,19 @@ public class CoffeeShop extends JFrame {
             coffeeOrderlist.clear();
             jtGesamtpreisText.setText("");
             taVeganAusgabe.setText("");
+            cbxDrink.setSelectedIndex(0);
+            cbxMilch.setSelectedIndex(0);
+            cbxGroeße.setSelectedIndex(0);
+            jtAnzahl.setText("");
+            keineRadioButton.setSelected(true);
+            vanilleRadioButton.setSelected(false);
+            pistazieRadioButton.setSelected(false);
+            caramellRadioButton.setSelected(false);
+
         }
 
         public void espresso() {
-            String ausgewählt = cbxDrinkBox.getSelectedItem().toString();
+            String ausgewählt = cbxDrink.getSelectedItem().toString();
 
             if (ausgewählt.equals("Espresso")) {
                 //Felder deaktivieren
