@@ -153,7 +153,7 @@
           <grid row="12" column="9" row-span="1" col-span="5" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-8885663"/>
+          <background color="-1711392"/>
           <font name="Hiragino Mincho ProN" size="20"/>
           <foreground color="-8885663"/>
           <text value="Order"/>
@@ -166,7 +166,7 @@
           </grid>
         </constraints>
         <properties>
-          <background color="-8885663"/>
+          <background color="-1711392"/>
           <font name="Hiragino Mincho ProN" size="20"/>
           <foreground color="-8885663"/>
           <text value="Zur Bestellung hinzufügen"/>
@@ -221,7 +221,7 @@
           <grid row="8" column="13" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-8885663"/>
+          <background color="-1711392"/>
           <font name="Hiragino Mincho ProN" size="20"/>
           <foreground color="-8885663"/>
           <text value="Vegan"/>
@@ -232,7 +232,7 @@
           <grid row="15" column="15" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-8885663"/>
+          <background color="-1711392"/>
           <font name="Hiragino Mincho ProN" size="16"/>
           <foreground color="-8885663"/>
           <text value="Clear"/>
