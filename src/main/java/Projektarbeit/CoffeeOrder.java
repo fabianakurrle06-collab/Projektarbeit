@@ -6,15 +6,17 @@ public class CoffeeOrder {
     private boolean bVanille;
     private boolean bCaramell;
     private boolean bPistazie;
+    private boolean bKeine;
     private String sMilk;
     private int iAnzahl;
 
-    public CoffeeOrder(String sDrink, boolean bVanille, String sSize, boolean bCaramell, boolean bPistazie, String sMilk, int iAnzahl) {
+    public CoffeeOrder(String sDrink, boolean bVanille, String sSize, boolean bCaramell, boolean bPistazie, boolean bKeine, String sMilk, int iAnzahl) {
         this.sDrink = sDrink;
         this.bVanille = bVanille;
         this.sSize = sSize;
         this.bCaramell = bCaramell;
         this.bPistazie = bPistazie;
+        this.bKeine = bKeine;
         this.sMilk = sMilk;
         this.iAnzahl = iAnzahl;
     }
@@ -24,6 +26,7 @@ public class CoffeeOrder {
             if (bVanille) sFlavour += "Vanille ";
             if (bCaramell) sFlavour += "Caramell ";
             if (bPistazie) sFlavour += "Pistazie ";
+            if (bKeine) sFlavour += "Keine Flavours";
 
             // wenn String leer, dann "keine"
             if (sFlavour.isEmpty()){

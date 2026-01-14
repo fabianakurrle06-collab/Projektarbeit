@@ -99,9 +99,9 @@ public class CoffeeShop extends JFrame {
         // Methoden
 
         public void initObjekte(){
-        coffeeOrderlist.add(new CoffeeOrder("Espresso", false,"Small", false, false, "Milch", 1));
-            coffeeOrderlist.add(new CoffeeOrder("Cappuccino", true,"Medium", false, false, "Hafermilch (+0,50)", 1));
-            coffeeOrderlist.add(new CoffeeOrder("Latte Macchiato", false,"Large", true, false, "Sojamilch (+0,50)", 1));
+        coffeeOrderlist.add(new CoffeeOrder("Espresso", false,"Small", false, false, true, "Milch", 1));
+            coffeeOrderlist.add(new CoffeeOrder("Cappuccino", true,"Medium", false, false, false,"Hafermilch (+0,50)", 1));
+            coffeeOrderlist.add(new CoffeeOrder("Latte Macchiato", false,"Large", true, false, false, "Sojamilch (+0,50)", 1));
             ausgeben();
         }
 
@@ -159,12 +159,13 @@ public class CoffeeShop extends JFrame {
 
                 // wenn Espresso, dann kein Flavour, keine Milch
                 String sMilk;
-                boolean bVanille, bCaramell, bPistazie;
+                boolean bVanille, bCaramell, bPistazie, bKeine;
                 if (sDrink.equals("Espresso")) {
                     sMilk = "Keine"; // Espresso hat keine Milch
                     bVanille = false;
                     bCaramell = false;
                     bPistazie = false;
+                    bKeine = false;
                 } else {
                     //normales Auslesen für alle anderen Getränke
                     sMilk = cbxMilch.getSelectedItem().toString();
@@ -177,11 +178,12 @@ public class CoffeeShop extends JFrame {
                     bVanille = vanilleRadioButton.isSelected();
                     bCaramell = caramellRadioButton.isSelected();
                     bPistazie = pistazieRadioButton.isSelected();
+                    bKeine = keineRadioButton.isSelected();
                 }
 
                 // Objekt erstellen und speichern
                 CoffeeOrder order = new CoffeeOrder(
-                        sDrink, bVanille, sSize, bCaramell, bPistazie, sMilk, iAnzahl);
+                        sDrink, bVanille, sSize, bCaramell, bPistazie, bKeine, sMilk, iAnzahl);
 
                 coffeeOrderlist.add(order);
                 ausgeben();
