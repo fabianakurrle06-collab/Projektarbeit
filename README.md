@@ -4,7 +4,7 @@ Dieses Java Projekt wurde von Marie Barke und Fabiana Kurrle im Rahmen der Proje
 So funktioniert es:
 1.	CoffeShop Datei durchführen lassen
 2.	Getränk (Drink), Größe (Size), Geschmack (Flavour) und Milchsorte (Milk) auswählen und eine Zahl bei „Anzahl“ für Ihre gewünschte Menge an Kaffee hinzufügen
-3.	Speicher Button tätigen  Automatisierte Prüfung auf Fehlereingaben durch Try-Catch (zB. Keine Zahl bei „Anzahl“ oder auch kein Getränk/Größe/Milchsorte ausgewählt 
+3.	Speicher Button tätigen. Automatisierte Prüfung auf Fehlereingaben durch Try-Catch (zB. „Keine Zahl" bei „Anzahl“ oder auch „kein Getränk/Größe/Milchsorte ausgewählt")
 4.	Speicherung aller Bestellungen in einer ArrayList<CoffeeOrder>
 5.	Durch Vegan Button die veganen Optionen in der Bestellung anzeigen lassen (Hafer-/Sojamilch)
 6.	Und durch den Order Button den Gesamtpreis aller Objekte in der Bestellung (ArrayList) anzeigen lassen
