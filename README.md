@@ -1,4 +1,6 @@
 Coffee Shop Bestellsystem
+
+
 Dieses Java Projekt wurde von Marie Barke und Fabiana Kurrle im Rahmen der Projektarbeit für das Modul Programmiertechnik IMUK 1 (WiSe 2025/2026) programmiert. Es ermöglicht die Aufnahme, Verwaltung und Filterung von Kaffeebestellungen über eine grafische Benutzeroberfläche.
 
 So funktioniert es:
