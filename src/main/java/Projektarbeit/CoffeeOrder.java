@@ -28,7 +28,7 @@ public class CoffeeOrder {
             if (bPistazie) sFlavour += "Pistazie ";
             if (bKeine) sFlavour += "Keine Flavours";
 
-            // wenn String leer, dann "keine" angezeit
+            // wenn String leer, dann "keine"
             if (sFlavour.isEmpty()){
                 sFlavour = "keine";
             }
