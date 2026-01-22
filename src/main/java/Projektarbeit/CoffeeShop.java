@@ -47,7 +47,7 @@ public class CoffeeShop extends JFrame {
         setVisible(true);
         initObjekte();
 
-        // Flavour-Group initialiseren (damit nur 1 wählbar ist) --> KI als Hilfe
+        // Flavour-Group initialiseren (damit nur 1 wählbar ist) --> Gemini(KI) als Hilfe
         flavourGroup = new ButtonGroup();
         flavourGroup.add(vanilleRadioButton);
         flavourGroup.add(caramellRadioButton);
@@ -228,10 +228,10 @@ public class CoffeeShop extends JFrame {
         }
 
         public void espresso() {
-            String ausgewählt = cbxDrink.getSelectedItem().toString();
+            String ausgewaehlt = cbxDrink.getSelectedItem().toString();
 
-            if (ausgewählt.equals("Espresso")) {
-                //Felder deaktivieren
+            if (ausgewaehlt.equals("Espresso")) {
+                //Felder deaktivieren --> Gemini(KI) als Hilfe
                 cbxMilch.setEnabled(false);
                 vanilleRadioButton.setEnabled(false);
                 caramellRadioButton.setEnabled(false);
