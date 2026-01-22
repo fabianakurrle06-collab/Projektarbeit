@@ -9,12 +9,12 @@ class CoffeeOrderTest {
     @Test
     //Szenario 1: Standard Bestellung
     public void testBerechnePreis() {
-        //Espresso (2.70), Small (+0.0), Milch (+0.0), 1 Stück
-        //Erwartung: 2.70 * 1 = 2.70
-        CoffeeOrder tesOrder = new CoffeeOrder("Espresso", false, "Small", false, false,false, "Milch", 1);
+        //Cappuccino (3.50), Small (+0.0), Milch (+0.0), 1 Stück
+        //Erwartung: 3.50 * 1 = 3.50
+        CoffeeOrder tesOrder = new CoffeeOrder("Cappuccino", false, "Small", false, false,true, "Milch", 1);
 
         //assertEquals(Erwartung, Ergebnis der Methode, Toleranz bie Kommazahlen)
-        assertEquals(2.70, tesOrder.berechnePreis(), 0.001); //0.001 technisch notwendig, wenn man mit Kommazahlen rechnet sonst: Ungenauigkeit bei Fließkommazahlen, solange der Unterschied kleiner als 0.0001 ist gilt der Test als bestanden
+        assertEquals(3.50, tesOrder.berechnePreis(), 0.001); //0.001 technisch notwendig, wenn man mit Kommazahlen rechnet sonst: Ungenauigkeit bei Fließkommazahlen, solange der Unterschied kleiner als 0.0001 ist gilt der Test als bestanden
     }
 
     @Test
@@ -22,7 +22,7 @@ class CoffeeOrderTest {
     public void testBeechnePreisExtras() {
         //Latte Macchiato (5.00), Large (+2.00), Pistazie (+1.50), Hafermilch (+0.50), 1 Stück
         //Erwartung: (5.00 + 2.00 + 1.50 + 0.50) * 1 = 9.00
-        CoffeeOrder order = new CoffeeOrder("Latte Macchiato", false, "Large", false, true, false, "Hafermilch", 1);
+        CoffeeOrder order = new CoffeeOrder("Latte Macchiato", false, "Large", false, true, false, "Hafermilch (+0,50)", 1);
 
         assertEquals(9.00, order.berechnePreis(), 0.001);
     }

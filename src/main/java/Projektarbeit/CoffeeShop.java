@@ -99,7 +99,7 @@ public class CoffeeShop extends JFrame {
         // Methoden
 
         public void initObjekte(){
-        coffeeOrderlist.add(new CoffeeOrder("Espresso", false,"Small", false, false, true, "Milch", 1));
+        coffeeOrderlist.add(new CoffeeOrder("Americano", false,"Small", false, false, true, "Milch", 1));
             coffeeOrderlist.add(new CoffeeOrder("Cappuccino", true,"Medium", false, false, false,"Hafermilch (+0,50)", 1));
             coffeeOrderlist.add(new CoffeeOrder("Latte Macchiato", false,"Large", true, false, false, "Sojamilch (+0,50)", 1));
             ausgeben();
